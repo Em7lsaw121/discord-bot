@@ -26,30 +26,10 @@ def start_server():
 
 # Events
 @bot.event
+@bot.event
 async def on_ready():
     print(f'{bot.user} ist online!')
-    await bot.change_presence(activity=discord.Game(name="!help"))
-
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-    
-    if message.content == '!ping':
-        await message.channel.send(f'Pong! {round(bot.latency * 1000)}ms')
-    
-    await bot.process_commands(message)
-
-@bot.command(name='hello')
-async def hello(ctx):
-    await ctx.send(f'Hallo {ctx.author.name}!')
-
-@bot.command(name='commands')
-async def commands_list(ctx):
-    embed = discord.Embed(title="Bot Commands", color=discord.Color.blue())
-    embed.add_field(name="!ping", value="Zeigt die Latenz", inline=False)
-    embed.add_field(name="!hello", value="Bot grüßt dich", inline=False)
-    await ctx.send(embed=embed)
+    await bot.change_presence(activity=discord.Game(name="ZYXE CASINO"))
 
 
 # Starten
