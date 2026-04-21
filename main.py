@@ -44,12 +44,13 @@ async def on_message(message):
 async def hello(ctx):
     await ctx.send(f'Hallo {ctx.author.name}!')
 
-@bot.command(name='help')
-async def help_command(ctx):
+@bot.command(name='commands')
+async def commands_list(ctx):
     embed = discord.Embed(title="Bot Commands", color=discord.Color.blue())
     embed.add_field(name="!ping", value="Zeigt die Latenz", inline=False)
     embed.add_field(name="!hello", value="Bot grüßt dich", inline=False)
     await ctx.send(embed=embed)
+
 
 # Starten
 if __name__ == '__main__':
